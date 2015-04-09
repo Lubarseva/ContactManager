@@ -10,5 +10,6 @@ CREATE TABLE CONTACTS
      lastname  VARCHAR(30),
      telephone VARCHAR(15),
      email     VARCHAR(30),
+     age     VARCHAR(10),
      created   TIMESTAMP DEFAULT NOW()
   );

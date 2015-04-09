@@ -27,6 +27,9 @@ public class Contact {
 	@Column(name = "TELEPHONE")
 	private String telephone;
 
+	@Column(name = "AGE")
+	private String age;
+
 	public Integer getId() {
 		return id;
 	}
@@ -67,6 +70,11 @@ public class Contact {
 		this.telephone = telephone;
 	}
 
-	// Getters and setters
-	
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
 }

@@ -45,6 +45,12 @@
 			<td><form:input path="telephone" /></td>
 		</tr>
 		<tr>
+			<td><form:label path="age">
+				<spring:message code="label.age" />
+			</form:label></td>
+			<td><form:input path="age" /></td>
+		</tr>
+		<tr>
 			<td colspan="2"><input type="submit"
 				value="<spring:message code="label.addcontact"/>" /></td>
 		</tr>
@@ -58,6 +64,7 @@
 			<th><spring:message code="label.firstname" /></th>
 			<th><spring:message code="label.email" /></th>
 			<th><spring:message code="label.telephone" /></th>
+			<th><spring:message code="label.age" /></th>
 			<th>&nbsp;</th>
 		</tr>
 		<c:forEach items="${contactList}" var="contact">
@@ -65,6 +72,7 @@
 				<td>${contact.lastname}, ${contact.firstname}</td>
 				<td>${contact.email}</td>
 				<td>${contact.telephone}</td>
+				<td>${contact.age}</td>
 				<td><a href="delete/${contact.id}"><spring:message code="label.delete" /></a></td>
 			</tr>
 		</c:forEach>

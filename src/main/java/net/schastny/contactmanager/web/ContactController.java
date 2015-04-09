@@ -25,6 +25,7 @@ public class ContactController {
 		map.put("contact", new Contact());
 		map.put("contactList", contactService.listContact());
 
+
 		return "contact";
 	}
 	
