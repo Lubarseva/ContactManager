@@ -9,5 +9,10 @@ public interface ContactDAO {
 
 	public List<Contact> listContact();
 
-	public void removeContact(Integer id);
+	public void removeContact(int id);
+
+	public void updateContact(Contact contact);
+
+	public Contact getContactById(int id);
+
 }

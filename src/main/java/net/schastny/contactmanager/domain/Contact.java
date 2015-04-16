@@ -77,4 +77,5 @@ public class Contact {
 	public void setAge(String age) {
 		this.age = age;
 	}
+
 }
