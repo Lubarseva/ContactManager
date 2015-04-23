@@ -22,7 +22,6 @@ public class ContactServiceImpl implements ContactService {
  
     @Transactional
     public List<Contact> listContact() {
- 
         return contactDAO.listContact();
     }
  
@@ -39,6 +38,16 @@ public class ContactServiceImpl implements ContactService {
     @Transactional
     public Contact getContactById(int id) {
         return this.contactDAO.getContactById(id);
+    }
+
+    @Transactional
+    public List<Contact> getContact(int page, int pageSize) {
+        return contactDAO.getContactList(page, pageSize);
+    }
+
+    @Override
+    public int getCountContact() {
+        return this.contactDAO.getCountContact();
     }
 
 

@@ -15,4 +15,8 @@ public interface ContactDAO {
 
 	public Contact getContactById(int id);
 
+	public List<Contact> getContactList(int page,int elPerPage);
+
+	public int getCountContact();
+
 }

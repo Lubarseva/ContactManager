@@ -120,14 +120,17 @@
     <table class="tg">
         <tr>
             <th><spring:message code="label.firstname"/></th>
+            <th><spring:message code="label.lastname"/></th>
             <th><spring:message code="label.email"/></th>
             <th><spring:message code="label.telephone"/></th>
             <th><spring:message code="label.age"/></th>
             <th>&nbsp;</th>
+            <th>&nbsp;</th>
         </tr>
         <c:forEach items="${contactList}" var="contact">
             <tr>
-                <td>${contact.lastname} ${contact.firstname}</td>
+                <td>${contact.lastname}</td>
+                <td>${contact.firstname}</td>
                 <td>${contact.email}</td>
                 <td>${contact.telephone}</td>
                 <td>${contact.age}</td>
@@ -136,6 +139,37 @@
             </tr>
         </c:forEach>
     </table>
-</c:if>
+
+    <c:if test="${currentPage != 1}">
+        <td><a href="index?pageNum=${currentPage - 1}&pageSize=${currentPageSize}">Previous</a></td>
+    </c:if>
+
+    <table border="1" cellpadding="5" cellspacing="5">
+        <tr>
+            <c:forEach begin="1" end="${noOfPages}" var="i">
+                <c:choose>
+                    <c:when test="${currentPage eq i}">
+                        <td>${i}</td>
+                    </c:when>
+                    <c:otherwise>
+                        <td><a href="index?page=${i}&pageSize=${currentPageSize}">${i}</a></td>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
+        </tr>
+    </table>
+    
+    <c:if test="${currentPage lt noOfPages}">
+        <td><a href="index?pageNum=${currentPage + 1}&pageSize=${currentPageSize}">Next</a></td>
+    </c:if>
+
+
+    <%--<div class="pag">--%>
+        <%--<ul>--%>
+            <%--<li class="active"><a href='/pagination/${page-1}'>Previous</a></li>--%>
+            <%--<li class="active"><a href='/pagination/${page+1}'>Next</a></li>--%>
+        <%--</ul>--%>
+    <%--</div>--%>
+ </c:if>
 </body>
 </html>

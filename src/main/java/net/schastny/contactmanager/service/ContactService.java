@@ -15,4 +15,8 @@ public interface ContactService {
 
 	public Contact getContactById(int id);
 
+	public List<Contact> getContact(int page, int pageSize);
+
+	public int getCountContact();
+
 }
